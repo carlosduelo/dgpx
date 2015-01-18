@@ -8,12 +8,15 @@
 namespace dgpx
 {
 
+class XMLParser;
+
 class DataContainer
 {
-public:
-//    insert( const float 
+friend class XMLParser;
 
 private:
+    void insert ( const TrackPoint& point); 
+
     std::vector< TrackPoint > _data;
 };
 

@@ -15,7 +15,7 @@ public:
         : _fileName( fileName )
     {}
 
-    void parse();
+    void parse( DataContainer& data );
 
 private:
     const std::string _fileName;

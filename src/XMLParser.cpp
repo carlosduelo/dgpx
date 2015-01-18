@@ -7,7 +7,7 @@
 namespace dgpx
 {
 
-void XMLParser::parse()
+void XMLParser::parse( DataContainer& data )
 {
     TiXmlDocument doc( _fileName.c_str() );
     if( !doc.LoadFile() )
@@ -87,6 +87,7 @@ void XMLParser::parse()
                  std::tm tm;
                  strptime(sTime, "%Y-%m-%dT%H:%M:%SZ", &tm);
                  time = std::chrono::system_clock::from_time_t(std::mktime(&tm));
+                 data.insert( TrackPoint( lat, lon, ele, time ) );
             }
             catch(...)
             {
