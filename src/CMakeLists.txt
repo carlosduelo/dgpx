@@ -4,6 +4,7 @@ set(SOURCES tinystr.cpp
             tinyxmlerror.cpp
             tinyxmlparser.cpp
             XMLParser.cpp
+            tpoint.cpp
             DataContainer.cpp
             main.cpp
    )

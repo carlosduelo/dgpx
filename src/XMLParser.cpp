@@ -87,7 +87,7 @@ void XMLParser::parse( DataContainer& data )
                  std::tm tm;
                  strptime(sTime, "%Y-%m-%dT%H:%M:%SZ", &tm);
                  time = std::chrono::system_clock::from_time_t(std::mktime(&tm));
-                 data.insert( TrackPoint( lat, lon, ele, time ) );
+                 data._insert( TrackPoint( lat, lon, ele, time ) );
             }
             catch(...)
             {

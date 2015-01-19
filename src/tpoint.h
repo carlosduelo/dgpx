@@ -2,12 +2,15 @@
 #define _H_TRACK_POINT_
 
 #include <chrono>
+#include <ostream>
 
 namespace dgpx
 {
 
 class TrackPoint
 {
+friend class DataContainer;
+
 public:
     TrackPoint( const float lat, const float lon,
                 const float ele,
@@ -17,6 +20,8 @@ public:
                         , _ele( ele )
                         , _time( time )
     {}
+
+    friend std::ostream& operator<<( std::ostream &out, const TrackPoint& point );
 
 private:
     const float _lat;

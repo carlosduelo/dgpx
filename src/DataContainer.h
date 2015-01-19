@@ -3,6 +3,7 @@
 
 #include <tpoint.h>
 
+#include <limits>
 #include <vector>
 
 namespace dgpx
@@ -14,10 +15,25 @@ class DataContainer
 {
 friend class XMLParser;
 
+public:
+    DataContainer()
+        : _maxEle( std::numeric_limits<float>::lowest() )
+        , _minEle( std::numeric_limits<float>::max() )
+        , _upHillEle( 0.0f )
+        , _downHillEle( 0.0f )
+    {}
+
+    void printPoints();
+    void printStats();
+
 private:
-    void insert ( const TrackPoint& point); 
+    void _insert ( const TrackPoint& point); 
 
     std::vector< TrackPoint > _data;
+    float _maxEle;
+    float _minEle;
+    float _upHillEle;
+    float _downHillEle;
 };
 
 }
