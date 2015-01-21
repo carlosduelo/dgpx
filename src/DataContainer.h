@@ -23,6 +23,8 @@ public:
         , _downHillEle( 0.0f )
     {}
 
+    void compute();
+
     void printPoints();
     void printStats();
 
@@ -30,8 +32,14 @@ private:
     void _insert ( const TrackPoint& point); 
 
     std::vector< TrackPoint > _data;
+    unsigned _maxEleIndex;
+    unsigned _minEleIndex;
     float _maxEle;
     float _minEle;
+
+    float _maxEleDiff;
+    float _avgEleDiff;
+
     float _upHillEle;
     float _downHillEle;
 };
