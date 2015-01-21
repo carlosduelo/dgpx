@@ -17,6 +17,7 @@ int main(int argc, char ** argv)
 
     dgpx::DataContainer data;
     parser.parse( data );
+    data.compute();
 
     data.printStats();
 }
