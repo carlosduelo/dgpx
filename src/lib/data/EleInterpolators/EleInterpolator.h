@@ -11,9 +11,9 @@ class EleInterpolator
 public:
     virtual ~EleInterpolartor() {}
 
-    bool init( DataContainer& data ) = 0;
+    virtual bool init( const DataContainer& data ) = 0;
 
-    float get( float x ) = 0;
+    virtual float get( float x ) const = 0;
 };
 
 }

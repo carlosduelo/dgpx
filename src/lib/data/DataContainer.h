@@ -25,11 +25,11 @@ public:
 
     void compute();
 
-    void printPoints();
-    void printStats();
+    void printPoints() const;
+    void printStats() const;
 
 private:
-    void _insert ( const TrackPoint& point); 
+    void _insert ( const TrackPoint& point);
 
     std::vector< TrackPoint > _data;
     unsigned _maxEleIndex;

@@ -48,13 +48,13 @@ void DataContainer::compute()
 
 }
 
-void DataContainer::printPoints()
+void DataContainer::printPoints() const
 {
     for( unsigned i = 0; i < _data.size(); i++ )
         std::cout << _data[i] << std::endl;
 }
 
-void DataContainer::printStats()
+void DataContainer::printStats() const
 {
     std::cout << "Stats from GPX:" << std::endl;
     std::cout << "\t Max Elevation: " << _maxEle << std::endl;

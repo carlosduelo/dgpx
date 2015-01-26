@@ -1,13 +1,14 @@
 
-set(SOURCES xmlReader/tinystr.cpp
-            xmlReader/tinyxml.cpp
-            xmlReader/tinyxmlerror.cpp
-            xmlReader/tinyxmlparser.cpp
-            xmlReader/XMLParser.cpp
-            data/tpoint.cpp
-            data/DataContainer.cpp
-            main.cpp
+# Compiling the dgpx library
+add_subdirectory(lib)
+
+# Adding includes, temporal, library install phase not implemented yet
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+
+# Compiling dgpx
+set(LIBRARIES
+        dgpxlib
    )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_executable(dgpx ${SOURCES})
+add_executable(dgpx main.cpp)
+target_link_libraries(dgpx ${LIBRARIES})
