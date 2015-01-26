@@ -1,6 +1,6 @@
-#include <XMLParser.h>
+#include <xmlReader/XMLParser.h>
 
-#include <tinyxml.h>
+#include <xmlReader/tinyxml.h>
 
 #include <iostream>
 
